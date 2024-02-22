@@ -1,1 +1,56 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+* Une façon de déclarer bootstrap dans son projet Angular
+@import "~bootstrap/dist/css/bootstrap.min.css"
+*/
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+#profilUser {
+    text-decoration: none;
+    list-style: none;
+    right: 2em;
+}
+
+.SectionMenu {
+    background-color: rgb(245, 161, 5);
+    height: 40em;
+    width: 20em; 
+    margin-top:1em;
+    margin-bottom: 1em; 
+}
+
+#menuCourrier {
+    padding-top: 5em;
+}
+
+#listMenuCourrier #itemMenuCourrier {
+    margin-bottom: 25px;
+    
+}
+
+#listMenuCourrier #itemMenuCourrier a {
+    text-decoration: none;
+    color: white;
+}
+
+i {
+    color: white;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+ .contenuMenuCourrier {
+   /*  background-repeat: no-repeat;*/
+    background-position: center; 
+    background-image: url("./public/images/img_accueil.png");
+    background-size: cover; 
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+   /*  margin-top:1em;
+    margin-bottom: 1em;*/
+    width: 100%; 
+    background-color: rgb(182, 203, 200);
+} 
+
+

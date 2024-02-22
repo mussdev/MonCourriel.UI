@@ -1,0 +1,220 @@
+<div class="container-fluid" >
+  <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand rounded-circle text-white text-center fw-bold" style="background-color: rgb(86, 220, 86);">55</span>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" size="50">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+  </nav>
+  <section >
+      <div class="table-responsive" style="height: 80vh;">
+        <table class="table table-success table-striped">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date emi.</th>
+                <th scope="col">N° Courrier</th>
+                <th scope="col">Destinataire</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Objet</th>
+                <th scope="col">Description</th>
+                <th scope="col">Statut</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+            <th scope="row">1</th>
+            <td>01-12-2022</td>
+            <td>22/01256</td>
+            <td>Otto</td>
+            <td>mdo</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Departement A</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>02-12-2022</td>
+            <td>22/01257</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service A</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>01-12-2022</td>
+            <td>22/01257</td>
+            <td>Mark</td>
+            <td>twitter</td>
+            <td>Otto</td>
+            <td>Mark</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>02-12-2022</td>
+            <td>22/01258</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service C</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>03-12-2022</td>
+            <td>22/01259</td>
+            <td>Mark</td>
+            <td>twitter</td>
+            <td>Otto</td>
+            <td>Mark</td>
+            <td>Service A</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>04-12-2022</td>
+            <td>22/01260</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>05-12-2022</td>
+            <td>22/01261</td>
+            <td>Frotto</td>
+            <td>twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Departement B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>06-12-2022</td>
+            <td>22/01261</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Jacob</td>
+            <td>Otto</td>
+            <td>Departement A</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>06-12-2022</td>
+            <td>22/01262</td>
+            <td>Mankou</td>
+            <td>twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>10-12-2022</td>
+            <td>22/01263</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">11</th>
+            <td>15-12-2022</td>
+            <td>22/01264</td>
+            <td>Mankou</td>
+            <td>twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">12</th>
+            <td>20-12-2022</td>
+            <td>22/01265</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service A</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">13</th>
+            <td>18-01-2023</td>
+            <td>22/01266</td>
+            <td>Akon</td>
+            <td>twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service C</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">14</th>
+            <td>25-01-2022</td>
+            <td>22/01266</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service C</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">15</th>
+            <td>05-02-2022</td>
+            <td>22/01267</td>
+            <td>AmenaDjoua</td>
+            <td>twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">16</th>
+            <td>05-02-2022</td>
+            <td>22/01267</td>
+            <td>Thornton</td>
+            <td>fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service A</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+          <tr>
+            <th scope="row">17</th>
+            <td>05-02-2022</td>
+            <td>22/01268</td>
+            <td>Totto</td>
+            <td>twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>Service B</td>
+            <td><button (click)="openFanImputationCourrier()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button><button (click)="openFanModifierCourrier()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button></td>
+          </tr>
+            </tbody>
+      </table>    
+      </div>
+  </section>
+  </div>
+  

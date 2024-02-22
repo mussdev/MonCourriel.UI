@@ -1,0 +1,49 @@
+<div class="container-fluid" >
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <span class="navbar-brand rounded-circle text-white text-center fw-bold" style="background-color: rgb(86, 220, 86);">90</span>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" size="50">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+</nav>
+<section >
+    <div class="table-responsive" style="height: 80vh;">
+      <table class="table table-success table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date emi.</th>
+              <th scope="col">N° Courrier</th>
+              <th scope="col">Expéditeurs</th>
+              <th scope="col">E-mail</th>
+              <th scope="col">Objet</th>
+              <th scope="col">Note</th>
+              <th scope="col">Statut</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let courrier of courriers">
+              <td scope="row">1</td>
+              <td>{{ courrier.Id }}</td>
+              <td>{{ courrier.CodeCourrier }}</td>
+              <td>{{ courrier.Expediteur }}</td>
+              <td>{{ courrier.MailCourrier }}</td>
+              <td>{{ courrier.Obejt }}</td>
+              <td>{{ courrier.Note }}</td>
+              <td>{{ courrier.Statut }}</td>
+              <td>
+                <button (click)="openFanImputationCourrierR()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button>
+                <button (click)="openFanModifierCourrierR()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button>
+                <button class="buttonAction"><i style="color: rgb(245, 5, 5);" class="bi bi-trash3 fw-bold"></i></button>
+              </td>
+            </tr>           
+          </tbody>
+    </table>    
+    </div>
+</section>
+</div>
+
+
