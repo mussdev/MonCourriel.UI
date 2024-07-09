@@ -1,49 +1,55 @@
-<div class="container-fluid" >
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <span class="navbar-brand rounded-circle text-white text-center fw-bold" style="background-color: rgb(86, 220, 86);">90</span>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" size="50">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-</nav>
-<section >
-    <div class="table-responsive" style="height: 80vh;">
-      <table class="table table-success table-striped">
-        <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Date emi.</th>
-              <th scope="col">N° Courrier</th>
-              <th scope="col">Expéditeurs</th>
-              <th scope="col">E-mail</th>
-              <th scope="col">Objet</th>
-              <th scope="col">Note</th>
-              <th scope="col">Statut</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let courrier of courriers">
-              <td scope="row">1</td>
-              <td>{{ courrier.Id }}</td>
-              <td>{{ courrier.CodeCourrier }}</td>
-              <td>{{ courrier.Expediteur }}</td>
-              <td>{{ courrier.MailCourrier }}</td>
-              <td>{{ courrier.Obejt }}</td>
-              <td>{{ courrier.Note }}</td>
-              <td>{{ courrier.Statut }}</td>
-              <td>
-                <button (click)="openFanImputationCourrierR()" class="buttonAction"><i class="bi bi-envelope-check fw-bold" style="color: rgb(86, 220, 86);"></i></button>
-                <button (click)="openFanModifierCourrierR()" class="buttonAction"><i style="color: rgb(245, 161, 5);" class="bi bi-pencil-square fw-bold"></i></button>
-                <button class="buttonAction"><i style="color: rgb(245, 5, 5);" class="bi bi-trash3 fw-bold"></i></button>
-              </td>
-            </tr>           
-          </tbody>
-    </table>    
-    </div>
-</section>
+<div class="min-h-screen">
+  <div class="row">
+    <div class="col-md-12"><app-menu></app-menu></div>
+  </div>
+  <main class="flex bg-teal-600">
+    <section class="col-md-2"><app-menu-vertical></app-menu-vertical></section>
+    <section class="col-md-10" >
+      <div class="justify-end ml-1 mr-1 mb-2 mt-2.5">
+        <form class="flex gap-1 mt-1">
+          <input class="form-control flex justify-end " type="search" placeholder="Search..." aria-label="Search" size="50">
+        </form>
+      </div>
+      <div class="table-responsive ml-1 mr-1">
+        <table class="table table-striped shadow w-screen table-auto">
+          <thead>
+              <tr>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">#</th>
+                <th class="w-1 px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Date</th>
+                <th class="w-1 px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">N°</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Expéditeurs</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">E-mail</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Objet</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Note</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Statut</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Emplacement</th>
+                <th class="px-1 py-1 text-center text-xs font-medium text-black tracking-wider" scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let courrier of courriers; let i = index">
+                <td class="whitespace-nowrap border px-1 py-1 font-semibold" scope="row">{{ i + 1 }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider">{{ courrier.dateCourrier | date:'dd/MM/yyyy' }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider" >{{ courrier.codeCourrier }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-medium text-black tracking-wider">{{ courrier.expediteur }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider">{{ courrier.mailCourrier }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider">{{ courrier.obejt }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider">{{ courrier.note }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider">{{ courrier.statut }}</td>
+                <td class="whitespace-nowrap border px-1 py-1 text-xs font-normal text-black tracking-wider">RAS</td>
+                <td class="flex gap-2">
+                  <button mat-raised-button (click)="openModifyCourrierPopup(courrier)"><i class="bi bi-eye fw-bold text-orange-500"></i></button>
+                  <button (click)="openPopupImputationCourrier()"><i class="bi bi-pencil-square fw-bold text-green-500"></i></button>
+                  <button><i class="bi bi-trash3 fw-bold text-red-500"></i></button>
+                </td>
+              </tr>           
+            </tbody>
+        </table>    
+      </div>
+    </section>
+  </main>
+       <!-- Pied de page -->
+  <div class="row">
+    <div class="col-md-12"><app-footer-page></app-footer-page></div>
+  </div>
 </div>
-
-

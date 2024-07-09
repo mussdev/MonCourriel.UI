@@ -1,29 +1,31 @@
-<app-menu></app-menu>
-<div class="container-fluid" style="display: flex;">
-  <section class="SectionMenu">
-    <nav class="navbar" id="menuCourrier">
-      <ul class="navbar-nav" id="listMenuCourrier" style="text-decoration: none; list-style-type: none;">
-        <li class="nav-item border-bottom" id="itemMenuCourrier"><i class="bi bi-pencil-square"></i><a (click)="callPopNewCourrier()" routerLink="#">Nouveau courrier</a></li>
-        <li class="nav-item border-bottom" id="itemMenuCourrier"><i class="bi bi-envelope"></i><a routerLink="/courriers-recus">Courriers reçus</a></li>
-        <li class="nav-item border-bottom" id="itemMenuCourrier"><i class="bi bi-envelope-check"></i><a (click)="showComponent('courriersImputes')" routerLink="#liste-courriers-imputes">Courriers imputés</a></li>
-        <li class="nav-item border-bottom" id="itemMenuCourrier"><i class="bi bi-archive"></i><a href="#">Archives</a></li>
-        <li class="nav-item border-bottom" id="itemMenuCourrier"><i class="bi bi-graph-up"></i><a href="#statistiqueCourrier">Tableau de bord</a></li>
-      </ul>
-    </nav>
-  </section>
-  <section class="contenuMenuCourrier">
-    <div *ngIf="displayComponentNouveauCourrier">
-      <app-saisi-courrier></app-saisi-courrier>     
-    </div>
-    
-    <div *ngIf="displayComponentListeCourriers">
-      <app-courriers-recus></app-courriers-recus> 
-    </div>
-
-    <div *ngIf="displayComponentCourriersImputes">
-        <app-courriers-imputes></app-courriers-imputes>
-    </div>
-      
-  </section>
+<div class="min-h-screen">
+<div class="row">
+  <div class="col-md-12">  <app-menu></app-menu></div>
 </div>
-<app-footer-page></app-footer-page>
+  <main class="flex bg-teal-600">
+      <!-- Votre contenu principal ici -->
+      <!-- <div class="flex border bg-black"> -->
+        <section class="col-md-2"><app-menu-vertical></app-menu-vertical></section>
+        <section class="col-md-10">
+          <!-- <div *ngIf="displayComponentNouveauCourrier">
+            <app-saisi-courrier></app-saisi-courrier>     
+          </div>
+          
+          <div *ngIf="displayComponentListeCourriers">
+            <app-courriers-recus></app-courriers-recus> 
+          </div>
+      
+          <div *ngIf="displayComponentCourriersImputes">
+              <app-courriers-imputes></app-courriers-imputes>
+          </div>
+             -->
+        </section>
+      <!-- </div> -->
+  </main>
+
+       <!-- Pied de page -->
+  <div class="row">
+    <div class="col-md-12"><app-footer-page></app-footer-page></div>
+  </div>
+
+</div>

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PopServiceService } from '../pop-service.service';
-import { MatDialog } from '@angular/material/dialog';
 import { Courrier } from '../models/Courrier';
 import { CourriersService } from '../services/courriers.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModifierCourriersComponent } from '../modifier-courriers/modifier-courriers.component';
+import { ImputationComponent } from '../imputation/imputation.component';
 
 @Component({
   selector: 'app-courriers-recus',
@@ -13,30 +14,29 @@ export class CourriersRecusComponent implements OnInit{
 
   courriers! : Array<Courrier>;
 
-  constructor(private popServices: PopServiceService, private dialog: MatDialog, private courrierService: CourriersService){}
+  constructor(private courrierService: CourriersService, private dialogRef:MatDialog){}
 
   ngOnInit(): void {
       this.courrierService.getAllCourriers()
       .subscribe({
         next: (data) =>{
           this.courriers = data;
-          console.log(this.courriers);
+          //console.log(this.courriers);
         },
-        error: (response) => {
-          console.log(response);
+        error: (err) => {
+          console.log(err);
         }
       })
   }
 
-  callPopFan(): void{
-    this.popServices.openOverlay()
+  openModifyCourrierPopup(data: any){
+    this.dialogRef.open(ModifierCourriersComponent, {
+      data,
+    });
   }
 
-  openFanImputationCourrierR():void{
-    this.popServices.openOverlay();
+  openPopupImputationCourrier(){
+    this.dialogRef.open(ImputationComponent, {});
   }
 
-  openFanModifierCourrierR():void{
-    this.popServices.openDialogEditerCourrier();
-  }
 }

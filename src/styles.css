@@ -3,54 +3,56 @@
 * Une façon de déclarer bootstrap dans son projet Angular
 @import "~bootstrap/dist/css/bootstrap.min.css"
 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-#profilUser {
+/* #profilUser {
     text-decoration: none;
     list-style: none;
     right: 2em;
-}
+} */
 
-.SectionMenu {
+/* .SectionMenu {
     background-color: rgb(245, 161, 5);
     height: 40em;
     width: 20em; 
     margin-top:1em;
     margin-bottom: 1em; 
-}
+} */
 
-#menuCourrier {
+/* #menuCourrier {
     padding-top: 5em;
-}
+} */
 
-#listMenuCourrier #itemMenuCourrier {
+/* #listMenuCourrier #itemMenuCourrier {
     margin-bottom: 25px;
     
-}
+} */
 
-#listMenuCourrier #itemMenuCourrier a {
+/* #listMenuCourrier #itemMenuCourrier a {
     text-decoration: none;
     color: white;
-}
+} */
 
-i {
+/* i {
     color: white;
     margin-left: 5px;
     margin-right: 10px;
-}
+} */
 
- .contenuMenuCourrier {
-   /*  background-repeat: no-repeat;*/
+/*  .contenuMenuCourrier {
+   
     background-position: center; 
     background-image: url("./public/images/img_accueil.png");
     background-size: cover; 
-    /* display: flex; */
+ 
     align-items: center;
     justify-content: center;
-   /*  margin-top:1em;
-    margin-bottom: 1em;*/
     width: 100%; 
     background-color: rgb(182, 203, 200);
 } 
-
+ */
 

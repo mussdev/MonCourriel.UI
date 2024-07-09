@@ -1,0 +1,12 @@
+/* your-dialog.component.css */
+:host {
+    display: flex; 
+     position: fixed;
+     width: 900px; /* Ajustez la largeur selon vos besoins */
+     height: 650px; /* Ajustez la hauteur selon vos besoins */
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: teal; /* Ajoutez un fond pour le dialog */
+   }
+ 

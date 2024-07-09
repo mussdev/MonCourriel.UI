@@ -1,18 +1,12 @@
 /* your-dialog.component.css */
 :host {
     display: block;
-    width: 700px; /* Ajustez la largeur selon vos besoins */
+    width: 950px; /* Ajustez la largeur selon vos besoins */
     height: 500px; /* Ajustez la hauteur selon vos besoins */
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white; /* Ajoutez un fond pour le dialog */
-    border-radius: 8px; /* Ajoutez des styles supplémentaires si nécessaire */
-  }
-
-  .btn-close {
-        background-color: red;
-        width: 25px;
-        height: 25px;
+    background-color:teal; /* Ajoutez un fond pour le dialog */
+    /* border-radius: 8px;  Ajoutez des styles supplémentaires si nécessaire */
   }

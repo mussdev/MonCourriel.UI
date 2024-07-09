@@ -1,15 +1,18 @@
 import { Guid } from 'guid-typescript';
 
 export interface Courrier {
-    Id: Guid ;
-    Expediteur: string;
-    MailCourrier: string;
-    Adresse: string;
-    Contact: string;
-    CodeCourrier: string;
-    DateCourrier: Date;
-    Obejt: string;
-    Note: string;
-    Statut: string;
+    id: Guid ;
+    expediteur: string;
+    mailCourrier: string;
+    adresse: string;
+    contact: string;
+    codeCourrier: string;
+    dateCourrier: Date;
+    obejt: string;
+    note: string;
+    statut: string;
+    typeCourrier: string;
+   // imputationCourrier: string;
+   // motifImputation: string
   
 }

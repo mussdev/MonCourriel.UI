@@ -1,53 +1,119 @@
-<div class="modal-content">
-    <div class="modal-header mb-3" style="background-color: rgb(245, 161, 5); color: white;">
-      <h6 class="modal-title">Modifier courrier...<i class="bi bi-pen-fill"></i></h6>
-      <button type="button" class="btn-close btn-close-red" data-bs-dismiss="modal" aria-label="Close" (click)="cancelFanEditCourrier()"></button>
-    </div>
-    <div class="modal-body">
-      <form class="w-100">
-        <!-- Vos champs de formulaire -->
-        <div class="mb-2">
-          <label for="exampleFormControlInput1" class="form-label fw-bold">Expéditeur</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="........">
-        </div>
-        <div class=" double-input mb-2" style="display: flex; align-items:center;  ">
-          <div class="form-group" style="margin-right: 20px;">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">E-mail</label>
-            <input type="mail" class="form-control" id="exampleFormControlInput1" placeholder="xxxxx@gmail....">
-          </div>
-          <div class="form-group" style="margin-right: 20px;">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">Adresse</label>
-            <input type="mail" class="form-control" id="exampleFormControlInput1" placeholder="exe: BP 01 xxxx 01....">
-          </div>
-          <div class="form-group" style="margin-right: 20px;">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">Contact</label>
-            <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="00 00 00 00 00....">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">Sélectionnez une date</label>
-            <input type="date" class="form-control" id="exampleFormControlInput1">
-          </div>    
-        </div>
-        <div class="mb-2">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">N° du courrier</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="n°......">
-        </div>
-        <div class="mb-2">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">Objet</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="En ête du courrier...">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label fw-bold">Description</label>
-            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Contenu du courrier..."></textarea>
-        </div>
-        <div class="mb-3">
-            <input type="file" class="form-control form-control-file" id="exampleFormControlFile1">
-        </div>
-        <!-- Ajoutez d'autres champs de formulaire ici -->
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn" style="background-color: rgb(86, 220, 86); color: white; margin-right: 10px;" (click)="EditImputationFan()">Imputer <i class="bi bi-check2-circle"></i></button>
-      <button type="button" class="btn" style="background-color: rgb(86, 220, 86); color: white;">Enregistrer <i class="bi bi-floppy"></i></button>
-    </div>
+<div class="modal-content border rounded shadow">
+  <div class="modal-header h-7 bg-orange-500">
+    <h6 class="modal-title mt-0 text-white text-xs font-semibold italic">Modifier courrier...<i class="bi bi-pen-fill"></i></h6>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancel()" style="display: flex; margin-bottom: 5px;">
+    <span aria-hidden="true" style="font-size: 30px;">&times;</span>
+   </button>
   </div>
+  <div class="modal-body"> 
+    <form [formGroup]="form" class="row g-3">
+      <!-- Vos champs de formulaire -->
+      <div class="col-md-4">
+        <label for="statutCourrier" class="form-label">Statut</label>
+        <input type="text" class="form-control" readonly formControlName="statut">
+      </div>
+
+      <div class="col-md-4">
+        <label for="typeCourrier" class="form-label">Type</label>
+        <input type="text" class="form-control" placeholder="Type de courrier..." formControlName="typeCourrier">
+      </div>
+
+      <div class="col-md-4">
+        <label for="dateCourrier" class="form-label">Date</label>
+        <input type="date" class="form-control" formControlName="dateCourrier">
+        <span *ngIf="form.controls['dateCourrier'].errors && form.controls['dateCourrier'].touched" class="text-red-500 text-xs">
+          Date du courrier obligatoire !
+        </span>
+      </div>  
+
+      <div class="col-md-4">
+        <label for="expediteur" class="form-label">Expediteur</label>
+        <input formControlName="expediteur" type="text" class="form-control" placeholder="Expéditeur........">
+        <span *ngIf="form.controls['expediteur'].errors && form.controls['expediteur'].touched" class="text-red-500 text-xs">
+          Expéditeur obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-4">
+        <label for="adresse" class="form-label">Adresse</label>
+        <input type="text" class="form-control" placeholder="Adresse...." formControlName="adresse">
+        <span *ngIf="form.controls['adresse'].errors && form.controls['adresse'].touched" class="text-red-500 text-xs">
+          Adresse obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-4">
+        <label for="mail" class="form-label">Mail</label>
+        <input type="mail" class="form-control" placeholder="xxxxx@gmail...." formControlName="mailCourrier">
+        <span *ngIf="form.controls['mailCourrier'].errors && form.controls['mailCourrier'].touched" class="text-red-500 text-xs">
+          Mail obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-12">
+        <label for="contact" class="form-label">Tel</label>
+        <input type="phone" class="form-control" placeholder="Contact....." formControlName="contact">
+        <span *ngIf="form.controls['contact'].errors && form.controls['contact'].touched" class="text-red-500 text-xs">
+          Télephone obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-4">
+        <label for="imputationCourrier" class="form-label">Priorité</label>
+        <select name="prioriteCourrier" id="" class="form-select">
+          <option value=""></option>
+          <option value="">Urgent</option>
+          <option value="">Normal</option>
+          <option value="">Faible</option>
+        </select>
+      </div>
+  
+      <div class="col-md-4">
+        <label for="imputationCourrier" class="form-label">Imputer Cour.</label>
+        <input formControlName="imputationCourrier" type="phone" class="form-control" placeholder=".....">
+      </div>
+     
+      <div class="col-md-4">
+        <label for="motifImputation" class="form-label">Motif d'imputation</label>
+        <input formControlName="motifImputation" type="text" class="form-control">
+        <span *ngIf="form.controls['motifImputation'].errors && form.controls['motifImputation'].touched" class="text-red-500 text-xs">
+          Motif d'imputation obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-6">
+        <label for="codeCourrier" class="form-label">N° courrier</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="N° du courrier......" formControlName="codeCourrier" readonly>
+        <span *ngIf="form.controls['codeCourrier'].errors && form.controls['codeCourrier'].touched" class="text-red-500 text-xs">
+          Réference du courrier obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-6">
+        <label for="obejt" class="form-label">Objet</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Objet..." formControlName="obejt">
+        <span *ngIf="form.controls['obejt'].errors && form.controls['obejt'].touched" class="text-red-500 text-xs">
+          Objet obligatoire !
+        </span>
+      </div>
+
+      <div class="col-md-12">
+        <label for="note" class="form-label">Note</label>
+        <textarea class="form-control" placeholder="Description..." formControlName="note"></textarea>
+      </div>
+     
+      <div>
+          <input type="file" class="p-1 px-1 w-full rounded-md border" >
+      </div>
+
+      <div class="flex gap-1 items-end justify-end">
+        <button class="btn shadow-md rounded-md mb-0 px-1 py-1 text-white" style="background-color: rgb(6, 245, 110);" (click)="openFanImputationCourrier()"><i class="bi bi-check2-circle text-white"></i> Imputer </button>
+        <button class="btn shadow-md rounded-md mb-0 px-1 py-1 text-white" style="background-color: rgb(6, 245, 110);" (click)="updCourrier()"><i class="bi bi-floppy text-white"></i> Enregistrer</button>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer ">
+    <!-- {{ form.value | json }} -->
+    
+  </div>
+</div>

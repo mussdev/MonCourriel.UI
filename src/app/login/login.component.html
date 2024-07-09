@@ -1,42 +1,32 @@
-<!-- Menu -->
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(245, 161, 5); position: relative;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">MonCourriel</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<div class="grid grid-rows-[auto,1fr,auto] min-h-screen">
+ <div class="row">
+    <div class="col-md-12"><app-menu></app-menu></div>
+ </div>
+  <main class="flex-grow grid place-content-center bg-teal-600">
+      <!-- Votre contenu principal ici -->
+       <!-- Contenu de page --> 
+    <div class="grid place-items-center" >
+      <div class="card shadow" style="width: 25em;">
+          <div class="bg-orange-500 items-center text-xl font-semibold text-white rounded" ><i class="bi bi-person-lock"></i> Authentifiez-vous !</div>
+          <div class="card-body">
+              <form>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Non utilisateur</label>
+                      <input type="text" class="form-control" placeholder="...">
+                  </div>
+                  <div class="mb-3">
+                      <label for="" class="form-label">Mot de passe</label>
+                      <input type="password" class="form-control">
+                  </div>
+                  <button class="btn text-white" type="submit" (click)="goToPageHome()" style="background-color:rgb(86, 220, 86);">Connectez-vous ! <i class="bi bi-check-circle text-white"></i></button>
+              </form>
+          </div>
+      </div>
     </div>
-  </nav>
- <!-- Contenu de page --> 
-  <div class="container-fluid" style="height: 630px; display: flex; justify-content: center; align-items: center;">
-    <section class="">
-        <div>
-            <div class="card" style="width: 25em;">
-                <div class="card-header text-center fw-bold text-white" style="background-color: rgb(245, 161, 5);"><i class="bi bi-person-lock"></i> Authentifiez-vous !</div>
-                <div class="card-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Non utilisateur</label>
-                            <input type="text" class="form-control" placeholder="...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Mot de passe</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <button class="btn" type="submit" (click)="goToPageHome()" style="background-color:rgb(86, 220, 86); color: white;">Connectez-vous ! <i class="bi bi-check-circle"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+  </main>
+       <!-- Pied de page -->
+  <div class="row">
+    <div class="col-md-12"><app-footer-page></app-footer-page></div>
   </div>
-  <!-- Pied de page -->
-  <footer class="bg-light text-center text-white">
-    <!-- Copyright -->
-    <div class="text-center p-3 mt-auto" style="background-color: rgb(245, 161, 5);">
-      © 2023 Copyright : Tous droits réservés.
-      <a class="text-white" href="https://mdbootstrap.com/">Gestion des courriers d'entreprise</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  
+
+</div>

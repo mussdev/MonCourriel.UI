@@ -1,81 +1,60 @@
-<div class="cmodal-content">
-  <div class="modal-header mb-3" style="background-color: rgb(245, 161, 5); color: white;">
-    <h6 class="modal-title">Imputation des courriers <i class="bi bi-envelope-check"></i></h6>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cancelFanImp()"></button>
+<div class="modal-content">
+  <div class="modal-header mb-3 h-7 bg-orange-500">
+    <h6 class="text-white text-xs italic">Imputer le courrier <i class="bi bi-arrow-down-right-circle-fill"></i></h6>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancel()" style="display: flex; margin-bottom: 5px;">
+    <span aria-hidden="true" style="font-size: 30px;">&times;</span>
+   </button>
   </div>
- <div class="modal-body mb-5">
-  <form>
-    <div class="mb-3" style="display: flex;">
-      <div class="form-group" style="margin-right: 70px;">
-        <label for="exampleInputEmail1" class="form-label fw-bold">Courrier n°</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  <div class="modal-body px-4"> 
+  <form [formGroup]="form" (ngSubmit)="addItem()">
+    <div class="row g-4 align-items-center">
+      <div class="flex gap-2 col-auto">
+        <label for="">Dépatement : </label>
+        <select formControlName="departementImpute" class="mr-1 px-4" aria-label="Default select example" title="Récommandations">
+          <option *ngFor="let dirServ of listDirServ" [ngValue]="dirServ">{{ dirServ.description
+         }}</option>
+        </select>
       </div>
-      <div class="form-group">
-        <label for="exampleDate" class="form-label fw-bold">Date du courrier</label>
-        <input type="date" class="form-control" id="exampleDate">
+      <div class="flex gap-2 col-auto">
+        <label for="">Récommandation : </label>
+        <select formControlName="recommandationAFaire" class="mr-1 px-4" aria-label="Default select example" title="Récommandations">
+          <option *ngFor="let motif of listRecommandation" [ngValue]="motif">{{ motif.description
+         }}</option>
+        </select>
       </div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label fw-bold">Expéditeur</label>
-      <input type="text" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3">
-      <br>
-    </div>
-    <div class="mb-3">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <input type="checkbox" class="form-check-input" id="exampleCheck2" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service A</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service B</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service C</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service D</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service E</label>
-    </div>
-    <div class="mb-3">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <input type="checkbox" class="form-check-input" id="exampleCheck2" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service F</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service G</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service H</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service I</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service J</label>
-    </div>
-    <div class="mb-5">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <input type="checkbox" class="form-check-input" id="exampleCheck2" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service K</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service L</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service M</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service N</label>
-      <input type="checkbox" class="form-check-input" id="exampleCheck3" style="margin-left: 10px;">
-      <input type="checkbox" class="form-check-input" id="exampleCheck4" style="margin-left: 5px;">
-      <label class="form-check-label fw-bold" for="exampleCheck1" style="margin-left: 5px;">Service O</label>
+      <div class="col-auto">
+        <button class="bg-white text-green-500 rounded-md px-2 py-1">Ajouter <i class="bi bi-plus-circle"></i></button>
+      </div>
     </div>
   </form>
- </div>
- <div class="modal-footer">
-  <div class="mb-3"> <button type="submit" class="btn float-end" style="background-color: rgb(86, 220, 86); color: white;">Valider <i class="bi bi-check-circle"></i></button></div>
-</div>
+  <div style="border-bottom: 1px solid white; margin-bottom: 20px; margin-top: 15px;"></div>
+  <div>
+    <table class="w-full divide-y divide-gray-200">
+      <thead class="bg-white">
+        <tr>
+          <th class="px-2 py-1 text-center text-xs font-medium text-black uppercase tracking-wider" scope="col">#</th>
+          <th class="px-2 py-1 text-center text-xs font-medium text-black uppercase tracking-wider" scope="col" *ngIf="!colHide">Key Dep.</th>
+          <th class="px-2 py-1 text-center text-xs font-medium text-black uppercase tracking-wider" scope="col">Departement</th>
+          <th class="px-2 py-1 text-center text-xs font-medium text-black uppercase tracking-wider" scope="col" *ngIf="!colHide">Key Rec.</th>
+          <th class="px-2 py-1 text-center text-xs font-medium text-black uppercase tracking-wider" scope="col">Récommandation</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let item of tableauImputCourrier; let i = index">
+          <td class="px-2 py-1 whitespace-nowrap text-center"><button class="text-red-600" (click)="deleteRow(i)"><i class="bi bi-x-circle"></i></button></td>
+          <td class="px-2 py-1 whitespace-nowrap"  *ngIf="!colHide">{{ item.departementImpute.id }}</td>
+          <td class="px-2 py-1 whitespace-nowrap">{{ item.departementImpute.description }}</td>
+          <td class="px-2 py-1 whitespace-nowrap" *ngIf="!colHide">{{ item.recommandationAFaire.id }}</td>
+          <td class="px-2 py-1 whitespace-nowrap">{{ item.recommandationAFaire.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="flex justify-end">
+      <button class="bg-white mt-3 text-green-600 px-2 py-2 rounded-md">Enregistrer <i class="bi bi-floppy"></i></button>
+    </div>
+  </div>
+  </div>
+  <div class="modal-footer ">
+    <!-- {{ form.value | json }} -->   
+  </div>
 </div>
